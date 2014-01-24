@@ -66,8 +66,10 @@ min-width:770px;
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form></td>
-		<td>This plugin has cost me countless hours of work, if you use it, 
-		please donate a token of your appreciation!</td>
+		<td>OR
+		<a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
+		download WP Content Copy Protection (pro)</a> version to get the full 
+		control</td>
 	</tr>
 </table>
 <div style="width: 6px; height: 0px"></div></div>
@@ -176,10 +178,10 @@ min-width:770px;
 				even from my homepage</font></td>
 			</tr>
 			<tr>
-				<td width="221">&nbsp;</td>
-				<td>
-				&nbsp;</td>
-				<td width="212">&nbsp;</td>
+				<td colspan="3">
+				<a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
+				download WP Content Copy Protection (<font color="#008000">pro</font>)</a> 
+				version to get the full control</td>
 			</tr>
 			</table></div>
 
