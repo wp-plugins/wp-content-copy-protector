@@ -55,31 +55,38 @@ min-width:770px;
     padding: 10px;
     margin: 15px;
     }
+#sell-message{
+	margin-top: 10px;
+	background-color: #FFFFFF;
+    border-left: 4px solid #7AD03A;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    padding: 1px 12px;
+    color: #444444;
+    width: 520px;
+}
 </style>
-<div id="donate">
-<table border="0" width="100%" cellspacing="0" cellpadding="0" dir="ltr" height="88">
-	<tr>
-		<td align="center"><form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form></td>
-		<td>OR
-		<a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
+<!-- SimpleTabs -->
+	<script type="text/javascript" src="<?php echo $pluginsurl; ?>/js/simpletabs_1.3.js"></script>
+	<style type="text/css" media="screen">
+		@import "<?php echo $pluginsurl; ?>/css/simpletabs.css";
+	</style>
+<!-- /SimpleTabs -->
+<div id="sell-message"><p><strong><a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
 		download WP Content Copy Protection (pro)</a> version to get the full 
-		control</td>
-	</tr>
-</table>
-<div style="width: 6px; height: 0px"></div></div>
+		control</strong></p></div>
 <div id="aio_admin_main">
 <form method="POST">
 <input type="hidden" value="update" name="action">
+<div class="simpleTabs">
+<ul class="simpleTabsNavigation">
+    <li><a href="#">Main Settings</a></li>
+	<li><a href="#">Premium Settings</a></li>
+    <li><a href="#">About</a></li>
+</ul>
+<div class="simpleTabsContent" style="border: 1px solid #E9E9E9; padding: 4px">
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 	<tr>
 		<td width="77%">
-
 <div class="inner_block">
 	<h2>WP Content Copy Protection:</h2>
 	<p>This wp plugin protect the posts content from being copied by any other 
@@ -189,17 +196,36 @@ min-width:770px;
 			</tr>
 	</table>
 
-	<p align="left">
-				<input type="submit" value="     Save Settings     " name="B4" style="width: 193; height: 29;">&nbsp;&nbsp;
-	</p>
-
-	<p>&nbsp;</p>
 </div>
 &nbsp;</td>
 	</tr>
 </table>
+</div>
+<div class="simpleTabsContent" style="border: 1px solid #E9E9E9; padding: 4px">
+<p><?php echo "<img src='$pluginsurl/images/premium.png' align='center' />";?></p>
+</div>
+<div class="simpleTabsContent" style="height: 467px; border: 1px solid #E9E9E9; padding: 4px" id="layer1">
 
-<p>
-	</li></p>
+		<h2>About WP Content Copy Protection:</h2>
+		<p>This wp plugin protect the posts content from being copied by any 
+		other web site author , you dont want your content to spread without 
+		your permission!!</p>
+		<h3>Description:</h3>
+		<p>This wp plugin protect the posts content from being copied by any 
+		other web site author , you dont want your content to spread without 
+		your permission!!</p>
+		<h3>Improve your seo score in Google and Yahoo and other SE's:</h3>
+		<p>Our plugin protect your content from being copied by any other web 
+		sites so your posts will still uniqe content, this is the best option 
+		for seo</p>
+		<h3>Don't Let Your Stories Go to web thief !</h3>
+		<p>The plugin will keep your posts and home page protected by multiple 
+		techniques (JavaScript + CSS), this techniques does not found in any 
+		other wordpress plugin and you will own it for free with this plugin</p>
+		<h3>Easy to Install:</h3>
+		<p>Read the installation steps to find that this plugin does not need 
+		any coding or theme editing, just use your mouse..</div>
+</div><!-- simple tabs -->
+<input type="submit" value="     Save Settings     " name="B4" style="width: 193; height: 29;">
 </form></div>
 <p>&nbsp;</p>
