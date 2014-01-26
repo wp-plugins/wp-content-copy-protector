@@ -1,0 +1,23 @@
+About SimpleTabs
+
+Author: Fotis Evangelou
+License: GNU/GPL v2
+Credits:
+
+    Peter-Paul Koch for the "cookie" handling functions. More on: http://www.quirksmode.org/js/cookies.html
+    Simon Willison for the "addLoadEvent" function. More on: http://simonwillison.net/2004/May/26/addLoadEvent/
+
+Release changelog
+
+    v1.3 (released June 25th, 2009):
+    - Fixed "recurring divs in content" bug. If your tab contents included div tags, the tabs would break due to a faulty div tag count. Thanks to Sebastian L?scher (www.ddfriends.de) for providing the very simple fix!
+    - Separated all CSS classes at the top of the script, in case you need to modify them to suit your HTML/CSS structure.
+    v1.2: Fixed stupid IE syntax error which caused the script to break in IE browsers.
+    v1.1: Namespaced the entire script
+
+Features to come
+
+    Remember last accessed tab for all tab sets on the same page
+    Enable tab selection via URL anchor
+    Add a loading indicator for the tab panes
+
