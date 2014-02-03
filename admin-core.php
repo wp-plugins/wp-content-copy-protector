@@ -202,7 +202,13 @@ min-width:770px;
 </table>
 </div>
 <div class="simpleTabsContent" style="border: 1px solid #E9E9E9; padding: 4px">
-<p><?php echo "<img src='$pluginsurl/images/premium.png' align='center' />";?></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><b>
+<a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
+<font size="7">Preview</font></a></b></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
 </div>
 <div class="simpleTabsContent" style="height: 467px; border: 1px solid #E9E9E9; padding: 4px" id="layer1">
 
