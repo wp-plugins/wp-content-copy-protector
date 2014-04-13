@@ -234,4 +234,5 @@ min-width:770px;
 </div><!-- simple tabs -->
 <input type="submit" value="     Save Settings     " name="B4" style="width: 193; height: 29;">
 </form></div>
-<p>&nbsp;</p>
+<p>Want to thank us? give us a good rating
+<a href="http://wordpress.org/plugins/advanced-css3-related-posts-widget/">here</a></p>
