@@ -3,7 +3,7 @@
 Plugin Name: WP Content Copy Protection
 Plugin URI: http://www.wp-buy.com/
 Description: This wp plugin protect the posts content from being copied by any other web site author , you dont want your content to spread without your permission!!
-Version: 1.2
+Version: 1.3
 Author: wp-buy.com
 Author URI: http://www.wp-buy.com/
 */
