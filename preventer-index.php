@@ -1,8 +1,8 @@
 <?php ob_start();
 /*
-Plugin Name: WP Content Copy Protection
+Plugin Name: WP Content Copy Protection & No Right Click
 Plugin URI: http://www.wp-buy.com/
-Description: This wp plugin protect the posts content from being copied by any other web site author , you dont want your content to spread without your permission!!
+Description: This wp plugin (WP Content Copy Protection) protect the posts content from being copied by any other web site author , you dont want your content to spread without your permission!!
 Version: 1.3
 Author: wp-buy.com
 Author URI: http://www.wp-buy.com/

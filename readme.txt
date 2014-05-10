@@ -1,12 +1,12 @@
-=== WP Content Copy Protection & Right click ===
+=== WP Content Copy Protection & No Right Click ===
 Contributors: wp-buy	
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ashrafweb%40gmail%2ecom&lc=US&item_name=aio%20plugins&item_number=aio&amount=19%2e00&currency_code=USD&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Tags: copy, plugin, posts,content,protect,post,images,prevent,paste
+Tags: content, content copy protection, content protection, copy protection, prevent copy, protect blog, image protect, image protection, no right click, plagiarism, secure, theft
 Requires at least: 2.5
 Tested up to: 3.9
 Stable tag: 1.3
 
-This wp plugin protect the posts content from being copied by any other web site author , you dont want your content to spread without your permission!!
+This wp plugin protect the posts content from being copied by any other web site author (content copy protection) , you dont want your content to spread without your permission!!
 
 
 == Description ==
@@ -22,6 +22,18 @@ The plugin will keep your posts and home page protected by multiple techniques (
 **Easy to Install**:
 Read the installation steps to find that this plugin does not need any coding or theme editing, just use your mouse..
 
+**Our Pro Edition Features include:**
+*Protect your content from selection and copy.
+*No one can right click on images from your site if you want
+*Get full Control on Right click or context menu
+*Show alert messages, when user made right click on images, text boxes, links, plain text.. etc
+*Disable the keys  CTRL+A, CTRL+C, CTRL+X,CTRL+S or CTRL+V.
+*Advaced and easy to use control panel.    
+*Admin can exclude Home page Or Single posts from being copy protected
+*Admin can disable copy protection for admin users.
+*Aggressive image protection (its not easy or its impossible for expert users to steal your images !!)
+* compatible with all major theme frameworks
+*compatible with all major browsers
 
 == Screenshots ==
 1. WP Content Copy Protection admin page
@@ -38,3 +50,5 @@ Thanks!
 
 == Changelog ==
 * initial version
+* static pages bug fixed
+* home page problem fixed
