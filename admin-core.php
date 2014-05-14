@@ -102,7 +102,7 @@ min-width:770px;
 .simpleTabsContent{
 	border: 1px solid #E9E9E9;
 	padding: 4px;
-	overflow: hidden;
+	//overflow: hidden;
 }
 div.simpleTabsContent{
 	margin-top:0;
@@ -138,11 +138,9 @@ div.simpleTabsContent{
     <script src="<?php echo $pluginsurl; ?>/flat-ui/js/flatui-radio.js"></script>
     <script src="<?php echo $pluginsurl; ?>/flat-ui/js/jquery.tagsinput.js"></script>
     <script src="<?php echo $pluginsurl; ?>/flat-ui/js/jquery.placeholder.js"></script>
-<div id="sell-message"><p><strong><a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
-		download WP Content Copy Protection (pro)</a> version to get the full 
-		control</strong></p>
+<div id="sell-message">
 <p>Want to thank us? give us a good rating
-<a href="http://wordpress.org/plugins/advanced-css3-related-posts-widget/">here</a></p></div>
+<a href="http://wordpress.org/plugins/wp-content-copy-protector/">here</a></p></div>
 <div id="aio_admin_main">
 <form method="POST">
 <input type="hidden" value="update" name="action">
@@ -162,11 +160,10 @@ div.simpleTabsContent{
 	<p><font face="Tahoma" size="2">This wp plugin protect the posts content from being copied by any other 
 	web site author , you dont want your content to spread without your 
 	permission!!</font></p>
-		<table border="0" width="100%" cellspacing="0" cellpadding="0">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" height="370">
 			<tr>
-				<td width="60%">
-	<div style="height: 284px; float: left;padding: 4px" id="layer3">
-		<table border="0" width="100%" height="270" cellspacing="0" cellpadding="0">
+				<td>
+		<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
 			<tr>
 				<td width="221" height="33"><font face="Tahoma" size="2"><b>Posts</b> Protection</font></td>
 				<td>
@@ -242,7 +239,7 @@ div.simpleTabsContent{
 				<p><font face="Tahoma" size="2">&nbsp;Use Premium Settings tab to 
 				Customize its options</font></td>
 			</tr>
-			</table></div>
+			</table>
 			</td>
 			</tr>
 	</table>
@@ -252,15 +249,12 @@ div.simpleTabsContent{
 </table></div>
 <div class="simpleTabsContent">
 	<h4>WP Content Copy Protection (<font color="#008000">Premium options</font>):</h4>
-	<div style="width: 98%;min-width:800px; height: auto; float: left; padding: 4px" id="layer4">
-		<p style="text-align: center">
-		<img class="decoded overflowing" alt="http://www.wp-buy.com/wp-content/uploads/2014/01/screenshot-1.png" src="http://www.wp-buy.com/wp-content/uploads/2014/01/screenshot-1.png"></p>
-		<p style="text-align: center"><b>
+	<p style="text-align: center"><b>
 		<a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
-		<font size="7">Preview</font></a></b></p>
-		<p style="text-align: center">&nbsp;</div>
-
-</div>
+		<font size="7" color="#0606FF">Preview</font></a></b></p>
+	<p style="text-align: center">
+		<img class="decoded overflowing" alt="http://www.wp-buy.com/wp-content/uploads/2014/01/screenshot-1.png" src="http://www.wp-buy.com/wp-content/uploads/2014/01/screenshot-1.png"></p>
+	</div>
 <div class="simpleTabsContent" style="border: 1px solid #E9E9E9; padding: 4px" id="layer1">
 
 		<h6 class="text-font">About WP Content Copy Protection:</h6>
@@ -287,6 +281,8 @@ div.simpleTabsContent{
 	</div>
 <!-- /new tab -->
 </div><!-- simple tabs div end -->
-
+<script>$("select").selectpicker({style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse'});
+$(':checkbox').checkbox('check');
+</script>
 <p align="right"><input class="btn btn-success" type="submit" value="   Save Settings   " name="B4" style="width: 193; height: 29;">&nbsp;&nbsp;</p>
 </form></div>
