@@ -52,3 +52,4 @@ Thanks!
 * initial version
 * static pages bug fixed
 * home page problem fixed
+* Add new Style
