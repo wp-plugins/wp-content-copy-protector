@@ -17,17 +17,20 @@ The plugin will keep your posts and home page protected by multiple techniques (
 Read the installation steps to find that this plugin does not need any coding or theme editing, just use your mouse..
 
 **The Pro Edition Features include:**
-1. Protect your content from selection and copy.
-2. No one can right click on images from your site if you want
-3. Get full Control on Right click or context menu
-4. Show alert messages, when user made right click on images, text boxes, links, plain text.. etc
-5. Disable the keys  CTRL+A, CTRL+C, CTRL+X,CTRL+S or CTRL+V.
-6. Advaced and easy to use control panel.    
-7. Admin can exclude Home page Or Single posts from being copy protected
-8. Admin can disable copy protection for admin users.
-9. Aggressive image protection (its not easy or its impossible for expert users to steal your images !!)
-10. Compatible with all major theme frameworks
-11. Compatible with all major browsers
+<ul>
+<li>Get full Control on Right click or context menu</li>
+<li>Show alert messages, when user made right click on images, text boxes, links, plain text.. etc</li>
+<li>Admin can exclude Home page Or Single posts from being copy protected </li>
+<li>Admin can disable copy protection for admin users.</li>
+<li>3 protection layers (JavaScript protection, RightClick protection, CSS protection)</li>
+<li>Aggressive image protection (its near impossible for expert users to steal your images !!)</li>
+<li>compatible with all major theme frameworks</li>
+<li>compatible with all major browsers</li>
+<li>Tested in IE9, IE10, Firefox, Google Chrome, Opera</li>
+<li>Disables image drag and drop function</li>
+<li>Works on smart phones.</li>
+<li>Ability to set varying levels of protection per page or post.</li>
+</ul>
 
 == Screenshots ==
 1. WP Content Copy Protection premium admin page
