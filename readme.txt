@@ -16,6 +16,18 @@ The plugin will keep your posts and home page protected by multiple techniques (
 **Easy to Install**:
 Read the installation steps to find that this plugin does not need any coding or theme editing, just use your mouse..
 
+**Basic Features:**
+<ul>
+<li>Protect your content from selection and copy. this plugin makes protecting 
+your posts extremely simple without yelling at your readers</li>
+<li>No one can save images from your site.</li>
+<li>No right click or context menu.</li>
+<li>Show alert message, Image Ad or HTML Ad on save images or right click.</li>
+<li>Disable the following keys&nbsp; CTRL+A, CTRL+C, CTRL+X,CTRL+S or CTRL+V.</li>
+<li>Advanced and easy to use control panel.</li>
+<li>No one can right click images on your site if you want</li>
+</ul>
+
 **The Pro Edition Features include:**
 <ul>
 <li>Get full Control on Right click or context menu</li>
