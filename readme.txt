@@ -1,54 +1,62 @@
 === WP Content Copy Protection & No Right Click ===
 Contributors: wp-buy	
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ashrafweb%40gmail%2ecom&lc=US&item_name=aio%20plugins&item_number=aio&amount=19%2e00&currency_code=USD&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Tags: content, content copy protection, content protection, copy protection, prevent copy, protect blog, image protect, image protection, no right click, plagiarism, secure, theft
+Tags: content, content copy protection, content protection, copy protection, prevent copy, protect blog, image protect, image protection, no right click, plagiarism, secure content, content theft
 Requires at least: 2.5
-Tested up to: 3.9
-Stable tag: 1.3
+Tested up to: 3.9.1
+Stable tag: trunk
 
 This wp plugin protect the posts content from being copied by any other web site author (content copy protection) , you dont want your content to spread without your permission!!
 
 
 == Description ==
 This wp plugin protect the posts content from being copied by any other web site author , you dont want your content to spread without your permission!!
-
-**Improve your seo score in Google and Yahoo and other SE's**:
-Our plugin  protect your content from being copied by any other web sites so your posts will still uniqe content, this is the best option for seo
-
-
-**Don't Let Your Stories Go to web thief!**
 The plugin will keep your posts and home page protected by multiple techniques (JavaScript + CSS), this techniques does not found in any other wordpress plugin and you will own it for free with this plugin
 
 **Easy to Install**:
 Read the installation steps to find that this plugin does not need any coding or theme editing, just use your mouse..
 
-**Our Pro Edition Features include:**
-*Protect your content from selection and copy.
-*No one can right click on images from your site if you want
-*Get full Control on Right click or context menu
-*Show alert messages, when user made right click on images, text boxes, links, plain text.. etc
-*Disable the keys  CTRL+A, CTRL+C, CTRL+X,CTRL+S or CTRL+V.
-*Advaced and easy to use control panel.    
-*Admin can exclude Home page Or Single posts from being copy protected
-*Admin can disable copy protection for admin users.
-*Aggressive image protection (its not easy or its impossible for expert users to steal your images !!)
-* compatible with all major theme frameworks
-*compatible with all major browsers
+**The Pro Edition Features include:**
+1. Protect your content from selection and copy.
+2. No one can right click on images from your site if you want
+3. Get full Control on Right click or context menu
+4. Show alert messages, when user made right click on images, text boxes, links, plain text.. etc
+5. Disable the keys  CTRL+A, CTRL+C, CTRL+X,CTRL+S or CTRL+V.
+6. Advaced and easy to use control panel.    
+7. Admin can exclude Home page Or Single posts from being copy protected
+8. Admin can disable copy protection for admin users.
+9. Aggressive image protection (its not easy or its impossible for expert users to steal your images !!)
+10. Compatible with all major theme frameworks
+11. Compatible with all major browsers
 
 == Screenshots ==
-1. WP Content Copy Protection admin page
+1. WP Content Copy Protection premium admin page
 
 == Installation Guide ==
 **Installation steps**
-1.Download the package.
-2.Extract the contents of WP-Content-Copy-Protection.zip to wp-content/plugins/ folder  You should get a folder called WP-Content-Copy-Protection
-3.Activate the Plugin in WP-Admin.
-4.Goto Settings > **WP-Content-Copy-Protection** to configure options.
-5.You will find **4 options** to protect your content,images,homepage and css protection. dont forget to **save** the changes before exit
+1. Download the package.
+2. Extract the contents of WP-Content-Copy-Protection.zip to wp-content/plugins/ folder  You should get a folder called WP-Content-Copy-Protection
+3. Activate the Plugin in WP-Admin.
+4. Goto Settings > **WP-Content-Copy-Protection** to configure options.
+5. You will find **4 options** to protect your content,images,homepage and css protection. dont forget to **save** the changes before exit
 Thanks!
 
 
 == Changelog ==
+=Currunt Version=
+1. Admin can disable copy protection for logged in/admin users
+2. disable the possible shortcut keys for copying the Text
+3. You can also choose where this Plugin should work like All Pages (including Home Page and all other Pages & Posts) or Home Page or Custom Pages/Posts using the Settings Page options.
+4. Multiple Text and Image Protection methods
+5. Advanced Image Protection using Responsive Lightbox
+6. Protect your Text and Images by Disabling the Mouse Right Click and Possible Shortcut Keys for Cut (CTRL+x), Copy (CTRL+c), Paste (CTRL+v), Select All(CTRL+a), View Source (CTRL+u) etc.
+7. control the protection to be on users only (if admin here dont protect)
+8. Option to Display Alert Message on Mouse Right Click.
+9. Enable Right Click on Hyperlink Option Added
+10. Right click problem fixed on static pages
+11. New flat interface
+
+=v1.0=
 * initial version
 * static pages bug fixed
 * home page problem fixed

@@ -5,11 +5,20 @@ if($_POST["action"] == 'update')
 {
 	//----------------------------------------------------list the options array values
 	$single_posts_protection = $_POST["single_posts_protection"];
-	$css_protection = $_POST["css_protection"];
 	$home_page_protection = $_POST["home_page_protection"];
-	$show_protection_info = $_POST["show_protection_info"];
-	$protect_admin = $_POST["protect_admin"];
+	$page_protection = $_POST["page_protection"];
 	
+	$show_protection_info = $_POST["show_protection_info"];
+	$exclude_admin_from_protection = $_POST["exclude_admin_from_protection"];
+	
+	$home_css_protection = $_POST["home_css_protection"];
+	$posts_css_protection = $_POST["posts_css_protection"];
+	$pages_css_protection = $_POST["pages_css_protection"];
+	
+	$right_click_protection_posts = $_POST["right_click_protection_posts"];
+	$right_click_protection_homepage = $_POST["right_click_protection_homepage"];
+	$right_click_protection_pages = $_POST["right_click_protection_pages"];
+
 	$img = $_POST["img"];
 	$a = $_POST["a"];
 	$pb = $_POST["pb"];
@@ -17,7 +26,7 @@ if($_POST["action"] == 'update')
 	$h= $_POST["h"];
 	$textarea = $_POST["textarea"];
 	$emptyspaces = $_POST["emptyspaces"];
-	
+
 	$smessage = $_POST["smessage"];
 	$alert_msg_img = $_POST["alert_msg_img"];
 	$alert_msg_a = $_POST["alert_msg_a"];
@@ -31,10 +40,16 @@ if($_POST["action"] == 'update')
 	$wccp_settings = 
 	Array (
 			'single_posts_protection' => $single_posts_protection, // prevent content copy, take 2 parameters
-			'css_protection' => $css_protection, // PROTECTION BY CSS TECHNIQUES
 			'home_page_protection' => $home_page_protection, // PROTECT THE HOME PAGE OR NOT
+			'page_protection' => $page_protection, // protect pages by javascript
+			'right_click_protection_posts' => $right_click_protection_posts, //
+			'right_click_protection_homepage' => $right_click_protection_homepage, //
+			'right_click_protection_pages' => $right_click_protection_pages, //
+			'home_css_protection' => $home_css_protection, // premium option
+			'posts_css_protection' => $posts_css_protection, // premium option
+			'pages_css_protection' => $pages_css_protection, // premium option
 			'show_protection_info' => $show_protection_info, // about the plugin
-			'protect_admin' => $protect_admin,
+			'exclude_admin_from_protection' => $exclude_admin_from_protection,
 			'img' => $img,
 			'a' => $a,
 			'pb' => $pb,
@@ -102,70 +117,46 @@ min-width:770px;
 .simpleTabsContent{
 	border: 1px solid #E9E9E9;
 	padding: 4px;
-	//overflow: hidden;
 }
 div.simpleTabsContent{
 	margin-top:0;
+	border: 1px solid #E0E0E0;
+    display: none;
+    height: 100%;
+    min-height: 400px;
+    padding: 5px 15px 15px;
 }
-#sell-message{
-	margin-top: 10px;
-	background-color: #FFFFFF;
-    border-left: 4px solid #7AD03A;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    padding: 1px 12px;
-    color: #444444;
-    width: 520px;
+html {
+background: #FFFFFF;
 }
 </style>
-<!-- SimpleTabs -->
-	<script type="text/javascript" src="<?php echo $pluginsurl; ?>/js/simpletabs_1.3.js"></script>
-	<style type="text/css" media="screen">
-		@import "<?php echo $pluginsurl; ?>/css/simpletabs.css";
-	</style>
-<!-- /SimpleTabs -->
-    <!-- Loading Bootstrap -->
-    <link href="<?php echo $pluginsurl; ?>/flat-ui/css/bootstrap.css" rel="stylesheet">
-	<!-- Loading Flat UI -->
-    <link href="<?php echo $pluginsurl; ?>/flat-ui/css/flat-ui.css" rel="stylesheet">
-	<!-- Load JS here for greater good =============================-->
-    <script src="<?php echo $pluginsurl; ?>/flat-ui/js/jquery-1.8.3.min.js"></script>
-    <script src="<?php echo $pluginsurl; ?>/flat-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
-    <script src="<?php echo $pluginsurl; ?>/flat-ui/js/jquery.ui.touch-punch.min.js"></script>
-    <script src="<?php echo $pluginsurl; ?>/flat-ui/js/bootstrap.min.js"></script>
-    <script src="<?php echo $pluginsurl; ?>/flat-ui/js/bootstrap-select.js"></script>
-    <script src="<?php echo $pluginsurl; ?>/flat-ui/js/bootstrap-switch.js"></script>
-    <script src="<?php echo $pluginsurl; ?>/flat-ui/js/flatui-checkbox.js"></script>
-    <script src="<?php echo $pluginsurl; ?>/flat-ui/js/flatui-radio.js"></script>
-    <script src="<?php echo $pluginsurl; ?>/flat-ui/js/jquery.tagsinput.js"></script>
-    <script src="<?php echo $pluginsurl; ?>/flat-ui/js/jquery.placeholder.js"></script>
-<div id="sell-message">
-<p>Want to thank us? give us a good rating
-<a href="http://wordpress.org/plugins/wp-content-copy-protector/">here</a></p></div>
 <div id="aio_admin_main">
 <form method="POST">
 <input type="hidden" value="update" name="action">
 <div class="simpleTabs">
 <ul class="simpleTabsNavigation">
     <li><a href="#">Main Settings</a></li>
-	<li><a href="#">Premium Settings</a></li>
+	<li><a href="#">Premium RightClick Protection</a></li>
+	<li><a href="#">Premium Protection by CSS</a></li>
     <li><a href="#">About</a></li>
 </ul>
 <div class="simpleTabsContent">
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 	<tr>
 		<td width="77%">
-
-<div class="inner_block">
-	<h4>WP Content Copy Protection:</h4>
-	<p><font face="Tahoma" size="2">This wp plugin protect the posts content from being copied by any other 
-	web site author , you dont want your content to spread without your 
-	permission!!</font></p>
-		<table border="0" width="100%" cellspacing="0" cellpadding="0" height="370">
+	<h4>Copy Protection using JavaScript (<font color="#008000">Basic Layer</font>):</h4>
+	<p><font face="Tahoma" size="2">This is the basic protection layer that uses
+	<u>JavaScript</u> to protect the posts, home page content from being copied by any other 
+	web site author.</font></p>
+		<table border="0" width="100%" cellspacing="0" cellpadding="0">
 			<tr>
-				<td>
-		<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+				<td width="60%">
+	<div style="float: left;padding: 4px" id="layer3">
+		<table border="0" width="100%" height="320" cellspacing="0" cellpadding="0">
 			<tr>
-				<td width="221" height="33"><font face="Tahoma" size="2"><b>Posts</b> Protection</font></td>
+				<td width="221" height="33"><font face="Tahoma" size="2">Posts protection 
+				by 
+	<u>JavaScript</u></font></td>
 				<td>
 				<select size="1" name="single_posts_protection">
 				<?php 
@@ -186,7 +177,10 @@ div.simpleTabsContent{
 				<p><font face="Tahoma" size="2">&nbsp;For single posts content</font></p></td>
 			</tr>
 			<tr>
-				<td width="221" height="33"><font face="Tahoma" size="2"><b>Home Page</b> Protection</font></td>
+				<td width="221" height="33"><font face="Tahoma" size="2">Homepage 
+				protection 
+				by 
+	<u>JavaScript</u></font></td>
 				<td>
 				<select size="1" name="home_page_protection">
 				<?php 
@@ -204,15 +198,127 @@ div.simpleTabsContent{
 				</select>
 				</td>
 				<td align="left">
-				<p><font face="Tahoma" size="2">&nbsp;Dont copy any thing! 
+				<p><font face="Tahoma" size="2">&nbsp;Don't copy any thing! 
 				even from my homepage</font></td>
 			</tr>
 			<tr>
-				<td width="221" height="33"><font face="Tahoma" size="2">Protection by <b>CSS</b></font></td>
+				<td width="221" height="33"><font face="Tahoma" size="2">Static page's protection</font></td>
 				<td>
-				<select size="1" name="css_protection">
+				<select size="1" name="page_protection">
 				<?php 
-				if ($wccp_settings['css_protection'] == 'Enabled')
+				if ($wccp_settings['page_protection'] == 'Enabled')
+					{
+						echo '<option selected>Enabled</option>';
+						echo '<option>Disabled</option>';
+					}
+					else
+					{
+						echo '<option selected>Disabled</option>';
+						echo '<option>Enabled</option>';
+					}
+				?>
+				</select></td>
+				<td align="left">
+				<p><font face="Tahoma" size="2">&nbsp;Use Premium Settings tab to customize more options</font></td>
+			</tr>
+			<tr>
+				<td width="221" height="33"><font face="Tahoma" size="2">Exclude 
+				<u>Admin</u> from protection</font></td>
+				<td>
+				<p align="center"><font color="#FF0000">Premium</font></td>
+				<td align="left">
+				<font face="Tahoma" size="2">&nbsp;If <u>Yes</u>, The protection 
+				functions will be inactive for the admin when he is logged in</font></td>
+			</tr>
+			<tr>
+				<td width="221" height="33"><font face="Tahoma" size="2">Selection disabled message</font></td>
+				<td colspan="2">
+				<table border="0" width="49%" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+						<input type="text" placeholder="Enter something" class="form-control" name="smessage"  value="<?php echo $wccp_settings['smessage']; ?>"></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			</table></div>
+			</td>
+			</tr>
+	</table>
+</td>
+	</tr>
+</table></div>
+<div class="simpleTabsContent">
+	<h4>Copy Protection on RightClick (<font color="#008000">Premium Layer 2</font>):</h4>
+	<p><font face="Tahoma" size="2">In this protection layer your visitors will 
+	be able to <u>right click</u> on a specific page elements only (such as 
+	Links as an example)</font></p>
+	<div id="layer4">
+		<table border="0" width="100%" height="361" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="53" width="21%"><font face="Tahoma" size="2">Disable <u>RightClick</u> on</font></td>
+				<td height="53">
+				<table border="0" width="521" height="100%" cellspacing="1" cellpadding="0">
+					<tr>
+						<td width="161" height="46">
+				<label class="checkbox" for="checkbox1">
+					<font face="Tahoma">
+					<input data-toggle="checkbox" type="checkbox" name="right_click_protection_posts" value="checked" <?php echo $wccp_settings['right_click_protection_posts']; ?>><font size="2">Posts
+						</font></font>
+						</label>
+						</td>
+						<td width="161" height="46">
+				<label class="checkbox" for="checkbox1">
+					<font face="Tahoma">
+					<input data-toggle="checkbox" type="checkbox" name="right_click_protection_homepage" value="checked" <?php echo $wccp_settings['right_click_protection_homepage']; ?>><font size="2">HomePage
+						</font></font>
+						</label>
+						</td>
+						<td width="185" height="46">
+				<label class="checkbox" for="checkbox1">
+					<font face="Tahoma">
+					<input data-toggle="checkbox" type="checkbox" name="right_click_protection_pages" value="checked" <?php echo $wccp_settings['right_click_protection_pages']; ?>><font size="2">Static 
+				pages 
+				</font></font> 
+				</label>
+						</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td height="44" colspan="2">
+				<p align="left"><font color="#FF0000" face="Tahoma" size="2">
+				Remaining premium options preview image </font>
+				<img src="<?php echo $pluginsurl ?>/images/click-here-arrow.png" id="irc_mi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<b><font color="#0909FF"><u>
+				<a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
+				<font color="#0909FF">Preview &amp; Pricing</font></a></u></font></b></td>
+			</tr>
+			<tr>
+				<td height="264" colspan="2">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
+				<img border="1" src="<?php echo $pluginsurl ?>/images/premium2.png" style="border: 1px dotted #C0C0C0"></a><p>&nbsp;</td>
+			</tr>
+			</table></div>
+</div>
+<div class="simpleTabsContent">
+<h4>Protection by CSS Techniques (<font color="#008000">Premium Layer 3</font>):</h4>
+	<p><font face="Tahoma" size="2">In this protection layer your website will 
+	be protected by some <u>CSS</u> tricks that will word even if <u>JavaScript</u> 
+	is disabled from the browser settings</font></p>
+	<table border="0" width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="60%">
+	<div style="float: left;padding: 4px" id="layer5">
+		<table border="0" width="100%" height="232" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="221" height="74"><font face="Tahoma" size="2"><b>Home Page</b> Protection by CSS</font></td>
+				<td height="74">
+				<select size="1" name="home_css_protection">
+				<?php 
+				if ($wccp_settings['home_css_protection'] == 'Enabled')
 					{
 						echo '<option selected>Enabled</option>';
 						echo '<option>Disabled</option>';
@@ -225,64 +331,105 @@ div.simpleTabsContent{
 				?>
 				</select>
 				</td>
-				<td align="left">
-				<p><font face="Tahoma" size="2">&nbsp;Using CSS special code 
-				to protect the content without JavaScript</font></td>
+				<td align="left" height="74">
+				<font face="Tahoma" size="2">Protect your Homepage by CSS tricks</font></td>
 			</tr>
 			<tr>
-				<td width="221" height="33"><font face="Tahoma" size="2">Right Click protection</font></td>
-				<td>
-				<select size="1" name="D1">
-				<option selected value="Customized">Customized</option>
-				</select></td>
+				<td width="221" height="77"><font face="Tahoma" size="2"><b>Posts</b> Protection by CSS</font></td>
+				<td align="center">
+				<font color="#FF0000">Premium </font>
+				</td>
 				<td align="left">
-				<p><font face="Tahoma" size="2">&nbsp;Use Premium Settings tab to 
-				Customize its options</font></td>
+				<font face="Tahoma" size="2">Protect your single posts by CSS tricks</font></td>
 			</tr>
-			</table>
+			<tr>
+				<td width="221"><font face="Tahoma" size="2"><b>Pages</b> Protection by CSS</font></td>
+				<td align="center">
+				<font color="#FF0000">Premium&nbsp;
+				<script>$("select").selectpicker({style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse'});</script>
+				</font>
+				</td>
+				<td align="left"><font face="Tahoma" size="2">Protect your static pages by CSS tricks</font></td>
+			</tr>
+			</table></div>
 			</td>
 			</tr>
 	</table>
-</div>
-</td>
-	</tr>
-</table></div>
-<div class="simpleTabsContent">
-	<h4>WP Content Copy Protection (<font color="#008000">Premium options</font>):</h4>
-	<p style="text-align: center"><b>
-		<a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
-		<font size="7" color="#0606FF">Preview</font></a></b></p>
-	<p style="text-align: center">
-		<img class="decoded overflowing" alt="http://www.wp-buy.com/wp-content/uploads/2014/01/screenshot-1.png" src="http://www.wp-buy.com/wp-content/uploads/2014/01/screenshot-1.png"></p>
-	</div>
-<div class="simpleTabsContent" style="border: 1px solid #E9E9E9; padding: 4px" id="layer1">
 
-		<h6 class="text-font">About WP Content Copy Protection:</h6>
-		<p><font face="Tahoma" style="font-size: 10pt">This wp plugin protect the posts content from being copied by any 
-		other web site author , you dont want your content to spread without 
-		your permission!!</font></p>
-		<h6 class="text-font">Description:</h6>
-		<p><font face="Tahoma" style="font-size: 10pt">This wp plugin protect the posts content from being copied by any 
-		other web site author , you dont want your content to spread without 
-		your permission!!</font></p>
-		<h6 class="text-font">Improve your seo score in Google and Yahoo and other SE's:</h6>
-		<p><font face="Tahoma" style="font-size: 10pt">Our plugin protect your content from being copied by any other web 
-		sites so your posts will still uniqe content, this is the best option 
-		for seo</font></p>
-		<h6 class="text-font">Don't Let Your Stories Go to web thief !</h6>
-		<p><font face="Tahoma" style="font-size: 10pt">The plugin will keep your posts and home page protected by multiple 
+</div>
+<div class="simpleTabsContent" id="layer1">
+
+		<font color="#FFFFFF">
+
+		<b>
+
+		<font face="Tahoma" size="2"><span style="background-color: #000000">About WP Content Copy Protection:</span></font><span style="background-color: #000000">
+		</span>
+			</b>
+			</font>
+		<ul>
+			<li><font face="Tahoma" style="font-size: 10pt">This wp plugin protect the posts content from being copied by any 
+		other web site author , you don't want your content to spread without 
+		your permission!!</font></li>
+			<li><font face="Tahoma" size="2">Improve your seo score in Google and Yahoo and other SE's:
+			</font><font face="Tahoma" style="font-size: 10pt">Our plugin protect your content from being copied by any other web 
+		sites so your posts will still unique content, this is the best option 
+		for seo</font></li>
+			<li><font face="Tahoma" size="2">Don't Let Your Stories Go to web 
+			thief !</font><font face="Tahoma" style="font-size: 10pt"> The plugin will keep your posts and home page protected by multiple 
 		techniques (JavaScript + CSS), this techniques does not found in any 
-		other wordpress plugin and you will own it for free with this plugin</font></p>
-		<h6 class="text-font">Easy to Install:</h6>
-		<p><font face="Tahoma" style="font-size: 10pt">Read the installation steps to find that this plugin does not need 
-		any coding or theme editing, just use your mouse..</font></div>
-<!-- new tab -->
-<div class="simpleTabsContent" style="border: 1px solid #E9E9E9; padding: 4px">
-	</div>
-<!-- /new tab -->
+		other wordpress plugin and you will own it for free with this plugin</font></li>
+		</ul>
+		<p><b><font face="Tahoma" size="2" color="#FFFFFF">
+		<span style="background-color: #008000">Basic features:</span></font></b></p>
+		<ul>
+			<li><font style="font-size: 10pt" face="Tahoma">Protect your content 
+			from selection and copy. this plugin makes protecting your posts 
+			extremely simple without yelling at your readers</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">No one can save 
+			images from your site.</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">No right click or 
+			context menu.</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Show alert message, 
+			Image Ad or HTML Ad on save images or right click.</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Disable the 
+			following keys&nbsp; CTRL+A, CTRL+C, CTRL+X,CTRL+S or CTRL+V.</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Advanced and easy to 
+			use control panel.</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">No one can right 
+			click images on your site if you want</font></li>
+		</ul>
+		<p><b><font face="Tahoma" size="2" color="#FFFFFF">
+		<span style="background-color: #5B2473">Premium features:</span></font></b></p>
+		<ul>
+			<li><font style="font-size: 10pt" face="Tahoma">Get full Control on 
+			Right click or context menu</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Show alert messages, 
+			when user made right click on images, text boxes, links, plain 
+			text.. etc</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Admin can exclude 
+			Home page Or Single posts from being copy protected </font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Admin can disable 
+			copy protection for admin users.</font></li>
+			<li><font face="Tahoma" size="2">3 protection layers (JavaScript 
+			protection, RightClick protection, CSS protection)</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Aggressive image 
+			protection (its near impossible for expert users to steal 
+			your images !!)</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">compatible with all 
+			major theme frameworks</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">compatible with all major browsers</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Tested in IE9, IE10, 
+			Firefox, Google Chrome, Opera</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Disables image drag 
+			and drop function</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Works on smart 
+			phones.</font></li>
+			<li><font style="font-size: 10pt" face="Tahoma">Ability to set 
+			varying levels of protection per page or post.</font></li>
+			<li></li>
+		</ul>
+		<p class="text-font">&nbsp;</div>
 </div><!-- simple tabs div end -->
-<script>$("select").selectpicker({style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse'});
-$(':checkbox').checkbox('check');
-</script>
 <p align="right"><input class="btn btn-success" type="submit" value="   Save Settings   " name="B4" style="width: 193; height: 29;">&nbsp;&nbsp;</p>
 </form></div>
