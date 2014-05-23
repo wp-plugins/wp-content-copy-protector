@@ -110,7 +110,6 @@ global $wccp_settings;
 		          key = window.event.keyCode;     //IE
 		     else
 		          key = e.which;     //firefox (97)
-		     alert(key);
 		     if (key == 97 || key == 65 || key == 67 || key == 99 || key == 88 || key == 120 || key == 26 || key == 86 || key == 83 || key == 43){
 		          if (smessage != "")alert(smessage);
 		          return false;

@@ -427,7 +427,6 @@ background: #FFFFFF;
 			phones.</font></li>
 			<li><font style="font-size: 10pt" face="Tahoma">Ability to set 
 			varying levels of protection per page or post.</font></li>
-			<li></li>
 		</ul>
 		<p class="text-font">&nbsp;</div>
 </div><!-- simple tabs div end -->
