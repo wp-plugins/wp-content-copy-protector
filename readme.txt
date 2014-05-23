@@ -47,32 +47,35 @@ your posts extremely simple without yelling at your readers</li>
 == Screenshots ==
 1. WP Content Copy Protection premium admin page
 
-== Installation Guide ==
+== Installation ==
 **Installation steps**
-1. Download the package.
-2. Extract the contents of WP-Content-Copy-Protection.zip to wp-content/plugins/ folder  You should get a folder called WP-Content-Copy-Protection
-3. Activate the Plugin in WP-Admin.
-4. Goto Settings > **WP-Content-Copy-Protection** to configure options.
-5. You will find **4 options** to protect your content,images,homepage and css protection. dont forget to **save** the changes before exit
-Thanks!
-
+<ul>
+<li>Download the package.</li>
+<li>Extract the contents of WP-Content-Copy-Protection.zip to wp-content/plugins/ folder  You should get a folder called WP-Content-Copy-Protection</li>
+<li>Activate the Plugin in WP-Admin.</li>
+<li>Goto Settings > **WP-Content-Copy-Protection** to configure options.</li>
+<li>You will find **4 options** to protect your content,images,homepage and css protection. dont forget to **save** the changes before exit</li>
+</ul>
 
 == Changelog ==
-=Currunt Version=
-1. Admin can disable copy protection for logged in/admin users
-2. disable the possible shortcut keys for copying the Text
-3. You can also choose where this Plugin should work like All Pages (including Home Page and all other Pages & Posts) or Home Page or Custom Pages/Posts using the Settings Page options.
-4. Multiple Text and Image Protection methods
-5. Advanced Image Protection using Responsive Lightbox
-6. Protect your Text and Images by Disabling the Mouse Right Click and Possible Shortcut Keys for Cut (CTRL+x), Copy (CTRL+c), Paste (CTRL+v), Select All(CTRL+a), View Source (CTRL+u) etc.
-7. control the protection to be on users only (if admin here dont protect)
-8. Option to Display Alert Message on Mouse Right Click.
-9. Enable Right Click on Hyperlink Option Added
-10. Right click problem fixed on static pages
-11. New flat interface
-
-=v1.0=
-* initial version
-* static pages bug fixed
-* home page problem fixed
-* Add new Style
+= Currunt Version =
+<ul>
+<li>Admin can disable copy protection for logged in/admin users</li>
+<li>disable the possible shortcut keys for copying the Text</li>
+<li>You can also choose where this Plugin should work like All Pages (including Home Page and all other Pages & Posts) or Home Page or Custom Pages/Posts using the Settings Page options.</li>
+<li>Multiple Text and Image Protection methods</li>
+<li>Advanced Image Protection using Responsive Lightbox</li>
+<li>Protect your Text and Images by Disabling the Mouse Right Click and Possible Shortcut Keys for Cut (CTRL+x), Copy (CTRL+c), Paste (CTRL+v), Select All(CTRL+a), View Source (CTRL+u) etc.</li>
+<li>control the protection to be on users only (if admin here dont protect)</li>
+<li>Option to Display Alert Message on Mouse Right Click.</li>
+<li>Enable Right Click on Hyperlink Option Added</li>
+<li>Right click problem fixed on static pages</li>
+<li>New flat interface</li>
+</ul>
+= v1.0 =
+<ul>
+<li>initial version</li>
+<li>static pages bug fixed</li>
+<li>home page problem fixed</li>
+<li>Add new Style</li>
+</ul>
