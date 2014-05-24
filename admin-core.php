@@ -130,10 +130,6 @@ html {
 background: #FFFFFF;
 }
 </style>
-    <!-- Loading Bootstrap -->
-    <link href="<?php echo $pluginsurl; ?>/flat-ui/css/bootstrap.css" rel="stylesheet">
-	<!-- Loading Flat UI -->
-    <link href="<?php echo $pluginsurl; ?>/flat-ui/css/flat-ui.css" rel="stylesheet">
 <div id="aio_admin_main">
 <form method="POST">
 <input type="hidden" value="update" name="action">
