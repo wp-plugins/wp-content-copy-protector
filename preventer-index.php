@@ -3,12 +3,13 @@
 Plugin Name: WP Content Copy Protection & No Right Click
 Plugin URI: http://wordpress.org/plugins/wp-content-copy-protector/
 Description: This wp plugin protect the posts content from being copied by any other web site author , you dont want your content to spread without your permission!!
-Version: 1.4.0.1
+Version: 1.5.0.1
 Author: wp-buy
 Author URI: http://www.wp-buy.com/
 */
 ?>
 <?php
+//delete_option('wccp_settings');
 //define all variables the needed alot
 include 'the_globals.php';
 $wccp_settings = wccp_read_options();
@@ -260,6 +261,10 @@ if(!is_user_logged_in() || (is_user_logged_in() && $wccp_settings['exclude_admin
 				$classes[] = 'none';
 				return $classes;
 			}
+	}else
+	{
+		$classes[] = 'none';
+		return $classes;
 	}
 }
 //------------------------------------------------------------------------
@@ -288,7 +293,7 @@ function wccp_default_options(){
 			'right_click_protection_posts' => 'checked', //
 			'right_click_protection_homepage' => 'checked', //
 			'right_click_protection_pages' => 'checked', //
-			'home_css_protection' => 'Enabled', // premium option
+			'home_css_protection' => 'Enabled', // free option
 			'posts_css_protection' => 'Enabled', // premium option
 			'pages_css_protection' => 'Enabled', // premium option
 			'show_protection_info' => 'No', // about the plugin

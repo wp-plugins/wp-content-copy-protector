@@ -58,7 +58,11 @@ your posts extremely simple without yelling at your readers</li>
 </ul>
 
 == Changelog ==
-= Currunt Version =
+= 1.5.0.1 =
+<ul>
+<li>Fixing error (Warning: join(): Invalid arguments passed in /home/retailmakeover/public_html/wp-includes/post-template.php on line 478)</li>
+</ul>
+= 1.4.0.1 =
 <ul>
 <li>Admin can disable copy protection for logged in/admin users</li>
 <li>disable the possible shortcut keys for copying the Text</li>
@@ -72,7 +76,7 @@ your posts extremely simple without yelling at your readers</li>
 <li>Right click problem fixed on static pages</li>
 <li>New flat interface</li>
 </ul>
-= v1.0 =
+= 1.0 =
 <ul>
 <li>initial version</li>
 <li>static pages bug fixed</li>

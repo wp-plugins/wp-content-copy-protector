@@ -46,17 +46,16 @@ if($_POST["action"] == 'update')
 			'right_click_protection_homepage' => $right_click_protection_homepage, //
 			'right_click_protection_pages' => $right_click_protection_pages, //
 			'home_css_protection' => $home_css_protection, // premium option
-			'posts_css_protection' => $posts_css_protection, // premium option
-			'pages_css_protection' => $pages_css_protection, // premium option
-			'show_protection_info' => $show_protection_info, // about the plugin
-			'exclude_admin_from_protection' => $exclude_admin_from_protection,
-			'img' => $img,
-			'a' => $a,
-			'pb' => $pb,
-			'input' => $input,
-			'h' => $h,
-			'textarea' => $textarea,
-			'emptyspaces' => $emptyspaces,
+			'posts_css_protection' => 'No', // premium option
+			'pages_css_protection' => 'No', // premium option
+			'exclude_admin_from_protection' => 'No', // premium option
+			'img' => '', // premium option
+			'a' => '', // premium option
+			'pb' => '', // premium option
+			'input' => '', // premium option
+			'h' => '', // premium option
+			'textarea' => '', // premium option
+			'emptyspaces' => '', // premium option
 			'smessage' => $smessage,
 			'alert_msg_img' => $alert_msg_img,
 			'alert_msg_a' => $alert_msg_a,
@@ -66,6 +65,7 @@ if($_POST["action"] == 'update')
 			'alert_msg_textarea' => $alert_msg_textarea,
 			'alert_msg_emptyspaces' => $alert_msg_emptyspaces
 		);
+
 		if ($wccp_settings != '' ) {
 		    update_option( 'wccp_settings' , $wccp_settings );
 		} else {
