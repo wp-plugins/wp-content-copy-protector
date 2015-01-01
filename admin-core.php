@@ -294,7 +294,7 @@ background: #FFFFFF;
 				<b><font color="#0909FF"><u>
 				<a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
 				<font color="#0909FF">Preview &amp; Pricing</font></a></u></font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<img src="<?php echo $pluginsurl ?>/images/live-preview.png">
+				<a href="http://www.wp-buy.com/TestDrive/wpcp-demos/Premium-Version-Full-Protection.htm"><img src="<?php echo $pluginsurl ?>/images/live-demo.png"></a>
 				</td>
 			</tr>
 			<tr>
