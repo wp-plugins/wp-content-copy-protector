@@ -293,7 +293,9 @@ background: #FFFFFF;
 				<img src="<?php echo $pluginsurl ?>/images/click-here-arrow.png" id="irc_mi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<b><font color="#0909FF"><u>
 				<a href="http://www.wp-buy.com/product/wp-content-copy-protection-pro/">
-				<font color="#0909FF">Preview &amp; Pricing</font></a></u></font></b></td>
+				<font color="#0909FF">Preview &amp; Pricing</font></a></u></font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="<?php echo $pluginsurl ?>/images/live-preview.png">
+				</td>
 			</tr>
 			<tr>
 				<td height="264" colspan="2">
