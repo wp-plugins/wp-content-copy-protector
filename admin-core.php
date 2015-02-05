@@ -1,7 +1,9 @@
 <?php
 //define all variables the needed alot
 include 'the_globals.php';
-if($_POST["action"] == 'update')
+$post_action = '';
+if(isset($_POST["action"])) $post_action = $_POST["action"];
+if($post_action == 'update')
 {
 	//----------------------------------------------------list the options array values
 	$single_posts_protection = $_POST["single_posts_protection"];

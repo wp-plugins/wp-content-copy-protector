@@ -16,7 +16,8 @@ $wccp_settings = wccp_read_options();
 //---------------------------------------------------------<!-- SimpleTabs -->
 function wccp_enqueue_scripts() {
 	global $pluginsurl;
-	$admincore = $_GET['page'];
+	$admincore = '';
+	if (isset($_GET['page'])) $admincore = $_GET['page'];
 	if( is_admin() && $admincore == 'wccpoptionspro') {
 	wp_enqueue_script('jquery');
 	wp_register_script('simpletabsjs', $pluginsurl.'/js/simpletabs_1.3.js');
@@ -323,7 +324,7 @@ function wccp_options_page_pro() {
 //------------------------------------------------------------------------
 //Make our function to call the WordPress function to add to the correct menu.
 function wccp_add_options() {
-	add_options_page('WP Content Copy Protection', 'WP Content Copy Protection', 8, 'wccpoptionspro', 'wccp_options_page_pro');
+	add_options_page('WP Content Copy Protection', 'WP Content Copy Protection', 'manage_options', 'wccpoptionspro', 'wccp_options_page_pro');
 }
 //First use the add_action to add onto the WordPress menu.
 add_action('admin_menu', 'wccp_add_options');
