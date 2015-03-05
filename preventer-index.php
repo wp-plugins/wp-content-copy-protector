@@ -3,7 +3,7 @@
 Plugin Name: WP Content Copy Protection & No Right Click
 Plugin URI: http://wordpress.org/plugins/wp-content-copy-protector/
 Description: This wp plugin protect the posts content from being copied by any other web site author , you dont want your content to spread without your permission!!
-Version: 1.5.0.1
+Version: 1.5.0.2
 Author: wp-buy
 Author URI: http://www.wp-buy.com/
 */
@@ -91,76 +91,163 @@ function wpcp_disable_selection()
 global $wccp_settings;
 ?>
 <script id="wpcp_disable_selection" type="text/javascript">
-		function disable_copy(hotkey)
-		{
-		if(!hotkey) var hotkey = document.body;
-		if (typeof hotkey.onselectstart!="undefined") //For IE
-			hotkey.onselectstart = function(){if (smessage != "")alert(smessage);return false;}
-		else if (typeof hotkey.style.MozUserSelect!="undefined"){ //For Firefox
-			hotkey.style.MozUserSelect="none";}
-		else //Opera
-			hotkey.onmousedown = function(){if (smessage != "")alert(smessage);return false;}
-		hotkey.style.cursor = "default";
-		}
-		document.onselectstart = disable_copy(document.body);
-		
-		function disableEnterKey(e)
-		{
-			if (!e) var e = window.event;
-			if (e.ctrlKey){
-		     var key;
-		     if(window.event)
-		          key = window.event.keyCode;     //IE
-		     else
-		          key = e.which;     //firefox (97)
-		     if (key == 97 || key == 65 || key == 67 || key == 99 || key == 88 || key == 120 || key == 26 || key == 86 || key == 83 || key == 43){
-		          if (smessage != "")alert(smessage);
-		          return false;
-		     }else
-		     	return true;
-		     }
-		}
-		var smessage = "<?php echo $wccp_settings['smessage'];?>";
-		document.body.onkeypress = disableEnterKey; //this disable Ctrl+A select action for firefox specially
+//<![CDATA[
+var image_save_msg='You Can Not Save images!';
+	var no_menu_msg='Context Menu disabled!';
+	var smessage = "<?php echo $wccp_settings['smessage'];?>";
 
-		//disable_copy(document.body);
+function disableEnterKey(e)
+{
+	if (e.ctrlKey){
+     var key;
+     if(window.event)
+          key = window.event.keyCode;     //IE
+     else
+          key = e.which;     //firefox (97)
+    //if (key != 17) alert(key);
+     if (key == 97 || key == 65 || key == 67 || key == 99 || key == 88 || key == 120 || key == 26 || key == 85  || key == 86 || key == 83 || key == 43)
+     {
+          show_wpcp_message('You are not allowed to copy content or view source');
+          return false;
+     }else
+     	return true;
+     }
+}
 
-		//chrome + mac
-		$(document).keydown(function(event) {
-		if(event.which == 17) return false; //chrome ctrl key
-		if(event.which == 157) return false; //mac command key
-		if(event.ctrlKey) return false; //random
-		});
-
-document.onselectstart=function(){
-var elemtype = event.srcElement.type;
-elemtype = elemtype.toUpperCase();
-	if (elemtype != "TEXT" && elemtype != "TEXTAREA" && elemtype != "INPUT" && elemtype != "PASSWORD" && elemtype != "SELECT") {
+function disable_copy(e)
+{	
+	var elemtype = e.target.nodeName;
+	elemtype = elemtype.toUpperCase();
+	var checker_IMG = '<?php echo $wccp_settings['img'];?>';
+	if (elemtype == "IMG" && checker_IMG == 'checked' && e.detail >= 2) {show_wpcp_message(alertMsg_IMG);return false;}
+    if (elemtype != "TEXT" && elemtype != "TEXTAREA" && elemtype != "INPUT" && elemtype != "PASSWORD" && elemtype != "SELECT")
+	{
+		if (smessage !== "" && e.detail >= 2)
+			show_wpcp_message(smessage);
+		return false;
+	}	
+}
+function disable_copy_ie()
+{
+	var elemtype = window.event.srcElement.nodeName;
+	elemtype = elemtype.toUpperCase();
+	if (elemtype == "IMG") {show_wpcp_message(alertMsg_IMG);return false;}
+	if (elemtype != "TEXT" && elemtype != "TEXTAREA" && elemtype != "INPUT" && elemtype != "PASSWORD" && elemtype != "SELECT")
+	{
+		if (smessage !== "")
+			show_wpcp_message(smessage);
 		return false;
 	}
-	else {
-	 	return true;
-	}
-};
-
-
-if (window.sidebar) {
-	document.onmousedown=function(e){
-		var obj=e.target;
-		if (obj.tagName.toUpperCase() == 'SELECT'
-			|| obj.tagName.toUpperCase() == "INPUT" 
-			|| obj.tagName.toUpperCase() == "TEXTAREA" 
-			|| obj.tagName.toUpperCase() == "PASSWORD") {
-			return true;
-		}
-		else {
-			return false;
-		}
-	};
+}	
+function reEnable()
+{
+	return true;
 }
-document.body.style.webkitTouchCallout='none';
-
+document.onkeydown = disableEnterKey;
+document.onselectstart = disable_copy_ie;
+if(navigator.userAgent.indexOf('MSIE')==-1)
+{
+	document.onmousedown = disable_copy;
+	document.onclick = reEnable;
+}
+function disableSelection(target)
+{
+    //For IE This code will work
+    if (typeof target.onselectstart!="undefined")
+    target.onselectstart = disable_copy_ie;
+    
+    //For Firefox This code will work
+    else if (typeof target.style.MozUserSelect!="undefined")
+    {target.style.MozUserSelect="none";}
+    
+    //All other  (ie: Opera) This code will work
+    else
+    target.onmousedown=function(){return false}
+    target.style.cursor = "default";
+}
+//Calling the JS function directly just after body load
+window.onload = function(){disableSelection(document.body);};
+//]]>
 </script>
+<?php
+}
+//------------------------------------------------------------------------
+function alert_message()
+{
+	global $wccp_settings;
+?>
+	<div id="wpcp-error-message" class="msgmsg-box-wpcp warning-wpcp hideme"><span>error: </span><?php echo $wccp_settings['smessage'];?></div>
+	<script>
+	var timeout_result;
+	function show_wpcp_message(smessage)
+	{
+		if (smessage !== "")
+			{
+			var smessage_text = '<span>Alert: </span>'+smessage;
+			document.getElementById("wpcp-error-message").innerHTML = smessage_text;
+			document.getElementById("wpcp-error-message").className = "msgmsg-box-wpcp warning-wpcp showme";
+			clearTimeout(timeout_result);
+			timeout_result = setTimeout(hide_message, 3000);
+			}
+	}
+	function hide_message()
+	{
+		document.getElementById("wpcp-error-message").className = "msgmsg-box-wpcp warning-wpcp hideme";
+	}
+	</script>
+	<style type="text/css">
+	#wpcp-error-message {
+	    direction: ltr;
+	    text-align: center;
+	    transition: opacity 900ms ease 0s;
+	    z-index: 99999999;
+	}
+	.hideme {
+    	opacity:0;
+    	visibility: hidden;
+	}
+	.showme {
+    	opacity:1;
+    	visibility: visible;
+	}
+	.msgmsg-box-wpcp {
+		border-radius: 10px;
+		color: #555;
+		font-family: Tahoma;
+		font-size: 11px;
+		margin: 10px;
+		padding: 10px 36px;
+		position: fixed;
+		width: 255px;
+		top: 50%;
+  		left: 50%;
+  		margin-top: -10px;
+  		margin-left: -130px;
+  		-webkit-box-shadow: 0px 0px 34px 2px rgba(242,191,191,1);
+		-moz-box-shadow: 0px 0px 34px 2px rgba(242,191,191,1);
+		box-shadow: 0px 0px 34px 2px rgba(242,191,191,1);
+	}
+	.msgmsg-box-wpcp span {
+		font-weight:bold;
+		text-transform:uppercase;
+	}
+	.error-wpcp {<?php global $pluginsurl; ?>
+		background:#ffecec url('<?php echo $pluginsurl ?>/images/error.png') no-repeat 10px 50%;
+		border:1px solid #f5aca6;
+	}
+	.success {
+		background:#e9ffd9 url('<?php echo $pluginsurl ?>/images/success.png') no-repeat 10px 50%;
+		border:1px solid #a6ca8a;
+	}
+	.warning-wpcp {
+		background:#ffecec url('<?php echo $pluginsurl ?>/images/warning.png') no-repeat 10px 50%;
+		border:1px solid #f5aca6;
+	}
+	.notice {
+		background:#e3f7fc url('<?php echo $pluginsurl ?>/images/notice.png') no-repeat 10px 50%;
+		border:1px solid #8ed9f6;
+	}
+    </style>
 <?php
 }
 //------------------------------------------------------------------------
@@ -172,6 +259,17 @@ function wccp_css_script()
 			{
 		    -moz-user-select:none;
 		    -webkit-user-select:none;
+    		cursor: default;
+			}
+			html
+			{
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
 			}
 			</style>
 			<script id="wpcp_css_disable_selection" type="text/javascript">
@@ -184,8 +282,8 @@ function wccp_css_script()
 function wccp_css_settings()
 {
 	global $wccp_settings;
-	if(!is_user_logged_in() || (is_user_logged_in() && $wccp_settings['exclude_admin_from_protection'] == 'No')){
-			if (((is_home() || is_front_page()) && $wccp_settings['home_css_protection'] == 'Enabled'))
+	if(!current_user_can( 'manage_options' ) || (current_user_can( 'manage_options' ) && $wccp_settings['exclude_admin_from_protection'] == 'No')){
+			if (((is_home() || is_front_page() || is_archive() || is_post_type_archive() ||  is_404() || is_attachment() || is_author() || is_category() || is_feed()) && $wccp_settings['home_css_protection'] == 'Enabled'))
 			{
 				wccp_css_script();
 				return;
@@ -206,8 +304,8 @@ function wccp_css_settings()
 function wccp_main_settings()
 {
 	global $wccp_settings;
-	if(!is_user_logged_in() || (is_user_logged_in() && $wccp_settings['exclude_admin_from_protection'] == 'No')){
-			if (((is_home() || is_front_page()) && $wccp_settings['home_page_protection'] == 'Enabled'))
+	if(!current_user_can( 'manage_options' ) || (current_user_can( 'manage_options' ) && $wccp_settings['exclude_admin_from_protection'] == 'No')){
+			if (((is_home() || is_front_page() || is_archive() || is_post_type_archive() ||  is_404() || is_attachment() || is_author() || is_category() || is_feed() || is_search()) && $wccp_settings['home_page_protection'] == 'Enabled'))
 			{
 				wpcp_disable_selection();
 				return;
@@ -228,18 +326,18 @@ function wccp_main_settings()
 function right_click_premium_settings()
 {
 	global $wccp_settings;
-	if(!is_user_logged_in() || (is_user_logged_in() && $wccp_settings['exclude_admin_from_protection'] == 'No')){
-			if (((is_home() || is_front_page()) && $wccp_settings['right_click_protection_homepage'] == 'checked'))
+	if(!current_user_can( 'manage_options' ) || (current_user_can( 'manage_options' ) && $wccp_settings['exclude_admin_from_protection'] == 'No')){
+			if (((is_home() || is_front_page() || is_archive() || is_post_type_archive() ||  is_404() || is_attachment() || is_author() || is_category() || is_feed()) && $wccp_settings['right_click_protection_homepage'] == 'checked'))
 			{
 				wpcp_disable_Right_Click();
 				return;
 			}
-			if (is_single() && $wccp_settings['right_click_protection_posts'] == 'checked')
+		if (is_single() && $wccp_settings['right_click_protection_posts'] == 'checked')
 			{
 				wpcp_disable_Right_Click();
 				return;
 			}
-			if (is_page() && !is_front_page() && $wccp_settings['right_click_protection_posts'] == 'checked')
+		if (is_page() && !is_front_page() && $wccp_settings['right_click_protection_posts'] == 'checked')
 			{
 				wpcp_disable_Right_Click();
 				return;
@@ -250,7 +348,7 @@ function right_click_premium_settings()
 // Add specific CSS class by filter
 function wccp_class_names($classes) {
 global  $wccp_settings;
-if(!is_user_logged_in() || (is_user_logged_in() && $wccp_settings['exclude_admin_from_protection'] == 'No'))
+if(!current_user_can( 'manage_options' ) || (current_user_can( 'manage_options' ) && $wccp_settings['exclude_admin_from_protection'] == 'No'))
 	{
 			if ($wccp_settings['home_css_protection'] == 'Enabled' || $wccp_settings['posts_css_protection'] == 'Enabled' ||  $wccp_settings['pages_css_protection'] == 'Enabled')
 			{
@@ -269,9 +367,10 @@ if(!is_user_logged_in() || (is_user_logged_in() && $wccp_settings['exclude_admin
 	}
 }
 //------------------------------------------------------------------------
-add_action('wp_footer','wccp_main_settings');
-add_action('wp_footer','right_click_premium_settings');
+add_action('wp_head','wccp_main_settings');
+add_action('wp_head','right_click_premium_settings');
 add_action('wp_head','wccp_css_settings');
+add_action('wp_footer','alert_message');
 add_filter('body_class','wccp_class_names');
 //-------------------------------------------------------Function to read options from the database
 function wccp_read_options()
@@ -294,10 +393,9 @@ function wccp_default_options(){
 			'right_click_protection_posts' => 'checked', //
 			'right_click_protection_homepage' => 'checked', //
 			'right_click_protection_pages' => 'checked', //
-			'home_css_protection' => 'Enabled', // free option
+			'home_css_protection' => 'Enabled', // premium option
 			'posts_css_protection' => 'Enabled', // premium option
 			'pages_css_protection' => 'Enabled', // premium option
-			'show_protection_info' => 'No', // about the plugin
 			'exclude_admin_from_protection' => 'No',
 			'img' => '',
 			'a' => '',

@@ -6,38 +6,63 @@ if(isset($_POST["action"])) $post_action = $_POST["action"];
 if($post_action == 'update')
 {
 	//----------------------------------------------------list the options array values
-	$single_posts_protection = $_POST["single_posts_protection"];
-	$home_page_protection = $_POST["home_page_protection"];
-	$page_protection = $_POST["page_protection"];
+	//----------------------------------------------------list the options array values
+	$single_posts_protection = '';
+	if(isset($_POST["single_posts_protection"])) $single_posts_protection = $_POST["single_posts_protection"];
+	$home_page_protection = '';
+	if(isset($_POST["home_page_protection"])) $home_page_protection = $_POST["home_page_protection"];
+	$page_protection = '';
+	if(isset($_POST["page_protection"])) $page_protection = $_POST["page_protection"];
 	
-	$show_protection_info = $_POST["show_protection_info"];
-	$exclude_admin_from_protection = $_POST["exclude_admin_from_protection"];
+	$exclude_admin_from_protection = '';
+	if(isset($_POST["exclude_admin_from_protection"])) $exclude_admin_from_protection = $_POST["exclude_admin_from_protection"];
 	
-	$home_css_protection = $_POST["home_css_protection"];
-	$posts_css_protection = $_POST["posts_css_protection"];
-	$pages_css_protection = $_POST["pages_css_protection"];
+	$home_css_protection = '';
+	if(isset($_POST["home_css_protection"])) $home_css_protection = $_POST["home_css_protection"];
+	$posts_css_protection = '';
+	if(isset($_POST["posts_css_protection"])) $posts_css_protection = $_POST["posts_css_protection"];
+	$pages_css_protection = '';
+	if(isset($_POST["pages_css_protection"])) $pages_css_protection = $_POST["pages_css_protection"];
 	
-	$right_click_protection_posts = $_POST["right_click_protection_posts"];
-	$right_click_protection_homepage = $_POST["right_click_protection_homepage"];
-	$right_click_protection_pages = $_POST["right_click_protection_pages"];
+	$right_click_protection_posts = '';
+	if(isset($_POST["right_click_protection_posts"])) $right_click_protection_posts = $_POST["right_click_protection_posts"];
+	$right_click_protection_homepage = '';
+	if(isset($_POST["right_click_protection_homepage"])) $right_click_protection_homepage = $_POST["right_click_protection_homepage"];
+	$right_click_protection_pages = '';
+	if(isset($_POST["right_click_protection_pages"])) $right_click_protection_pages = $_POST["right_click_protection_pages"];
 
-	$img = $_POST["img"];
-	$a = $_POST["a"];
-	$pb = $_POST["pb"];
-	$input = $_POST["input"];
-	$h= $_POST["h"];
-	$textarea = $_POST["textarea"];
-	$emptyspaces = $_POST["emptyspaces"];
+	$img = '';
+	if(isset($_POST["img"])) $img = $_POST["img"];
+	$a = '';
+	if(isset($_POST["a"])) $a = $_POST["a"];
+	$pb = '';
+	if(isset($_POST["pb"])) $pb = $_POST["pb"];
+	$input = '';
+	if(isset($_POST["input"])) $input = $_POST["input"];
+	$h = '';
+	if(isset($_POST["h"])) $h = $_POST["h"];
+	$textarea = '';
+	if(isset($_POST["textarea"])) $textarea = $_POST["textarea"];
+	$emptyspaces = '';
+	if(isset($_POST["emptyspaces"])) $emptyspaces = $_POST["emptyspaces"];
 
-	$smessage = $_POST["smessage"];
-	$alert_msg_img = $_POST["alert_msg_img"];
-	$alert_msg_a = $_POST["alert_msg_a"];
-	$alert_msg_pb = $_POST["alert_msg_pb"];
-	$alert_msg_input = $_POST["alert_msg_input"];
-	$alert_msg_h = $_POST["alert_msg_h"];
-	$alert_msg_textarea = $_POST["alert_msg_textarea"];
-	$alert_msg_emptyspaces = $_POST["alert_msg_emptyspaces"];
-
+	$smessage = '';
+	if(isset($_POST["smessage"])) $smessage = $_POST["smessage"];
+	$alert_msg_img = '';
+	if(isset($_POST["alert_msg_img"])) $alert_msg_img = $_POST["alert_msg_img"];
+	$alert_msg_a = '';
+	if(isset($_POST["alert_msg_a"])) $alert_msg_a = $_POST["alert_msg_a"];
+	$alert_msg_pb = '';
+	if(isset($_POST["alert_msg_pb"])) $alert_msg_pb = $_POST["alert_msg_pb"];
+	$alert_msg_input = '';
+	if(isset($_POST["alert_msg_input"])) $alert_msg_input = $_POST["alert_msg_input"];
+	$alert_msg_h = '';
+	if(isset($_POST["alert_msg_h"])) $alert_msg_h = $_POST["alert_msg_h"];
+	$alert_msg_textarea = '';
+	if(isset($_POST["alert_msg_textarea"])) $alert_msg_textarea = $_POST["alert_msg_textarea"];
+	$alert_msg_emptyspaces = '';
+	if(isset($_POST["alert_msg_emptyspaces"])) $alert_msg_emptyspaces = $_POST["alert_msg_emptyspaces"];
+	
 	//----------------------------------------------------Get the  options array values
 	$wccp_settings = 
 	Array (

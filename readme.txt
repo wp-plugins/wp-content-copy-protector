@@ -3,7 +3,7 @@ Contributors: wp-buy
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ashrafweb%40gmail%2ecom&lc=US&item_name=aio%20plugins&item_number=aio&amount=19%2e00&currency_code=USD&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Tags: content, content copy protection, content protection, copy protection, prevent copy, protect blog, image protect, image protection, no right click, plagiarism, secure content, content theft
 Requires at least: 2.5
-Tested up to: 4.1
+Tested up to: 4.1.1
 Stable tag: trunk
 
 This wp plugin protect the posts content from being copied by any other web site author (content copy protection) , you dont want your content to spread without your permission!!
@@ -58,6 +58,13 @@ your posts extremely simple without yelling at your readers</li>
 </ul>
 
 == Changelog ==
+= 1.5.0.2 =
+<ul>
+<li>Adding isset() function to all variables</li>
+<li>Improving alert message</li>
+<li>Fixing CTRL + U issue</li>
+<li>Fixing CSS tricks</li>
+</ul>
 = 1.5.0.1 =
 <ul>
 <li>Fixing error (Warning: join(): Invalid arguments passed in /home/retailmakeover/public_html/wp-includes/post-template.php on line 478)</li>
