@@ -58,6 +58,11 @@ your posts extremely simple without yelling at your readers</li>
 </ul>
 
 == Changelog ==
+= 1.5.0.3 =
+<ul>
+<li>Adding adminbar link and icon redirecting you to the plugin settings page</li>
+<li>Adding settings link into the plugins list page</li>
+</ul>
 = 1.5.0.2 =
 <ul>
 <li>Adding isset() function to all variables</li>

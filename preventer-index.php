@@ -3,7 +3,7 @@
 Plugin Name: WP Content Copy Protection & No Right Click
 Plugin URI: http://wordpress.org/plugins/wp-content-copy-protector/
 Description: This wp plugin protect the posts content from being copied by any other web site author , you dont want your content to spread without your permission!!
-Version: 1.5.0.2
+Version: 1.5.0.3
 Author: wp-buy
 Author URI: http://www.wp-buy.com/
 */
@@ -415,6 +415,31 @@ function wccp_default_options(){
 		);
 	return $wccp_settings;
 }
+//------------------------------------------------------------------------
+add_action('admin_bar_menu', 'add_items',  40);
+function add_items($admin_bar)
+{
+global $pluginsurl;
+$wccpadminurl = get_admin_url();
+//The properties of the new item. Read More about the missing 'parent' parameter below
+    $args = array(
+            'id'    => 'Protection',
+            'title' => __('<img src="'.$pluginsurl.'/images/adminbaricon.png" style="vertical-align:middle;margin-right:5px;width: 22px;" alt="Protection" title="Protection" />Protection' ),
+            'href'  => $wccpadminurl.'options-general.php?page=wccpoptionspro',
+            'meta'  => array('title' => __('WP Content Copy Protection'),)
+            );
+ 
+    //This is where the magic works.
+    $admin_bar->add_menu( $args);
+}
+//---------------------------------------- Add plugin settings link to Plugins page
+function plugin_add_settings_link( $links ) {
+	$settings_link = '<a href="options-general.php?page=wccpoptionspro">' . __( 'Settings' ) . '</a>';
+	array_push( $links, $settings_link );
+	return $links;
+}
+$plugin = plugin_basename( __FILE__ );
+add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );
 //------------------------------------------------------------------------
 function wccp_options_page_pro() {
      include 'admin-core.php';
