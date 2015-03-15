@@ -134,8 +134,7 @@ function disable_copy_ie()
 	if (elemtype == "IMG") {show_wpcp_message(alertMsg_IMG);return false;}
 	if (elemtype != "TEXT" && elemtype != "TEXTAREA" && elemtype != "INPUT" && elemtype != "PASSWORD" && elemtype != "SELECT")
 	{
-		if (smessage !== "")
-			show_wpcp_message(smessage);
+		//if (smessage !== "") show_wpcp_message(smessage);
 		return false;
 	}
 }	
@@ -415,7 +414,7 @@ function wccp_default_options(){
 		);
 	return $wccp_settings;
 }
-//------------------------------------------------------------------------
+//---------------------------------------------Add button to the admin bar
 add_action('admin_bar_menu', 'add_items',  40);
 function add_items($admin_bar)
 {
