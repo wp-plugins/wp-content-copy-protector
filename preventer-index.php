@@ -134,7 +134,8 @@ function disable_copy_ie()
 	if (elemtype == "IMG") {show_wpcp_message(alertMsg_IMG);return false;}
 	if (elemtype != "TEXT" && elemtype != "TEXTAREA" && elemtype != "INPUT" && elemtype != "PASSWORD" && elemtype != "SELECT")
 	{
-		//if (smessage !== "") show_wpcp_message(smessage);
+		//alert(navigator.userAgent.indexOf('MSIE'));
+			//if (smessage !== "") show_wpcp_message(smessage);
 		return false;
 	}
 }	
