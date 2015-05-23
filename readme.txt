@@ -40,7 +40,7 @@ your posts extremely simple without yelling at your readers</li>
 <li>compatible with all major browsers</li>
 <li>Tested in IE9, IE10, Firefox, Google Chrome, Opera</li>
 <li>Disables image drag and drop function</li>
-<li>Works on smart phones.</li>
+<li>Works on smart phones. (except iphones - will be solved soon)</li>
 <li>Ability to set varying levels of protection per page or post.</li>
 </ul>
 
