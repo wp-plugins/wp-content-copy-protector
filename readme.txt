@@ -3,7 +3,7 @@ Contributors: wp-buy
 Donate link: http://goo.gl/UJVpbi
 Tags: content, content copy protection, content protection, copy protection, prevent copy, protect blog, image protect, image protection, no right click, plagiarism, secure content, content theft
 Requires at least: 2.5
-Tested up to: 4.2.1
+Tested up to: 4.3
 Stable tag: trunk
 
 This wp plugin protect the posts content from being copied by any other web site author (content copy protection) , you dont want your content to spread without your permission!!
