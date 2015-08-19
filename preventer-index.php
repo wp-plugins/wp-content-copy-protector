@@ -445,6 +445,22 @@ function wccp_options_page_pro() {
      include 'admin-core.php';
 }
 //------------------------------------------------------------------------
+//Make a WordPress function to add to the correct menu.
+function wpccp_after_plugin_row( $plugin_file, $plugin_data, $status ) {
+	$class_name = $plugin_data['slug'];
+	$p_url = "http://www.wp-buy.com/product/wp-content-copy-protection-pro/";
+	echo '<tr id="' .$class_name. '-plugin-update-tr" class="plugin-update-tr active">';
+	echo '<th class="check-column" scope="row"></th>';
+	echo '<td colspan="3" class="plugin-update">';
+	echo '<div class="update-message" style="background:#FFFF99;margin-left:1px;" >';
+	echo 'You are running WP Content Copy Protection & No Right Click (free). To get more features, you can <a href="' .$p_url. '" target="_blank"><strong>Upgrade Now</strong></a>.';
+	echo '</div>';
+	echo '</td>';
+	echo '</tr>';
+}
+$path = plugin_basename( __FILE__ );
+add_action("after_plugin_row_{$path}", wpccp_after_plugin_row, 10, 3 );
+//------------------------------------------------------------------------
 //Make our function to call the WordPress function to add to the correct menu.
 function wccp_add_options() {
 	add_options_page('WP Content Copy Protection', 'WP Content Copy Protection', 'manage_options', 'wccpoptionspro', 'wccp_options_page_pro');
